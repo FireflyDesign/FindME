@@ -30,17 +30,17 @@ gulp.task('sass:prod', function () {
         .pipe(gulp.dest('www/css/'));
 });
 
-// gulp.task('browser-sync', function () {
-//     browserSync.init(["assets/stylesheets/*.css", "assets/javascripts/*.js", "./*.html"], {
-//         server: {
-//             baseDir: "./"
-//         }
-//     });
-// });
+gulp.task('browser-sync', function () {
+     browserSync.init(["www/css/*.css", "www/js/*.js", "./*.html"], {
+         server: {
+            baseDir: "./"
+         }
+     });
+});
 
-gulp.task('default', ['sass'/*, 'browser-sync'*/], function () {
+gulp.task('default', ['sass', 'browser-sync'], function () {
     gulp.watch("dev/scss/**/*.scss", ['sass']);
 });
 
-gulp.task('production', ['sass:prod'/*, 'browser-sync'*/], function () {
+gulp.task('production', ['sass:prod', 'browser-sync'], function () {
 });
