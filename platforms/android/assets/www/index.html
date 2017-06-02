@@ -32,24 +32,31 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <title>Hello World</title>
     </head>
     <body>
         <div class="app">
-            <h1>Kto jest zajebisty?</h1>
-			<br>
-			<br>
-			<br>
+            <h1>Find ME</h1>
 			
-			<a href="elo.html">Marcino</a>
+			<form id="login-form" action="" method="GET">
 			
+				<label for="login">
+					<input name="login" type="text" placeholder="login" value="">
+				</label>
+				<label for="passwd">
+					<input name="passwd" type="text" placeholder="password" value="">
+				</label>
+				
+				<input class="submit" type="submit" value="Zaloguj się">
+				
+			</form>
 			
         </div>
 		
 		
 		
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

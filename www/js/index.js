@@ -20,6 +20,8 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+		
+		console.log(jQuery('body'));
     },
 
     // deviceready Event Handler
@@ -41,6 +43,7 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+	
 };
 
 app.initialize();
