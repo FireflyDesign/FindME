@@ -28,7 +28,14 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php 'unsafe-inline' 'unsafe-eval'; default-src 'self' data: gap: http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' ; media-src *; img-src 'self' data: content:;">
+		
+		<script>
+			var connect = 'https://findme.app';
+			//var connect = 'http://10.0.2.2/findme-wp';
+		</script>
+		<script>
+			document.write('<meta http-equiv="Content-Security-Policy" content="script-src \'self\' '+ connect +'/wp-admin/admin-ajax.php \'unsafe-inline\' \'unsafe-eval\'; default-src \'self\' data: gap: '+ connect +'/wp-admin/admin-ajax.php \'unsafe-inline\' \'unsafe-eval\'; style-src \'self\' \'unsafe-inline\' ; media-src *; img-src \'self\' data: content:;">');
+		</script>
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -48,10 +55,20 @@
 					<input name="passwd" type="text" placeholder="password" value="">
 				</label>
 				
-				<input class="submit" type="button" value="Zaloguj się">
+				<input class="submit cta" type="button" value="Zaloguj się">
 				
 			</form>
 			<input id="value" type="text" name="value" value="resp">
+			
+			
+			<!-- Error box -->
+			<div id="error-box" class="error-box">
+				<div class="error-content">
+					<p></p>
+					<span class="close cta"></span>
+				</div>				
+			</div>
+			
         </div>
 		
 		

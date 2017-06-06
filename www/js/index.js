@@ -22,6 +22,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);		
 		
 		jQuery('#login-form input.submit').click(this.fm_check_user);
+		jQuery('#error-box .error-content .close').click(fm_hide_error);
     },
 
     // deviceready Event Handler
@@ -52,26 +53,48 @@ var app = {
 		
 		jQuery.ajax({
 			type: "POST",
-			url: "http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php", // our PHP handler file
+			url: connect + "/wp-admin/admin-ajax.php", // our PHP handler file
 			data: {
 				action: "fm_check_user",
 				login: jQuery('#login-form input[name="login"]').val(),
 				passwd: jQuery('#login-form input[name="passwd"]').val()				
 			},
 			success:function(results){
-				jQuery('#value').val(results);
-				console.log(results);
+				
+				if(parseInt(results) == 0){
+					fm_show_error('Nieprawidłowy login lub hasło!', 'OK');
+				}else{
+					jQuery('#value').val(results);
+				}				
+				
 			},
 			error:function(results){
-				jQuery('#value').val(results);
-				console.log(results);
+				fm_show_error('Brak połączenia z serwisem.', 'OK');
 			}
 		});
 		
 		
 		
-	}
+	},
+		
 	
 };
 
 app.initialize();
+
+
+
+	
+function fm_show_error(message, buttonVal){
+	jQuery('#error-box .error-content p').text(message);
+	jQuery('#error-box .close').text(buttonVal);
+	jQuery('#error-box').addClass('visible');
+}	
+	
+function fm_hide_error(){
+	jQuery('#error-box').removeClass('visible');
+	setTimeout(function(){		
+		jQuery('#error-box .close').text('');
+		jQuery('#error-box .error-content p').text('');
+	}, 700);
+}

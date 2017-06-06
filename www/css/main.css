@@ -34,6 +34,46 @@ body {
   font-family: Righteous;
   src: url(../font/Righteous-Regular.ttf); }
 
+.cta {
+  padding: 15px 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff; }
+
+#error-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.7s all;
+  opacity: 0; }
+  #error-box.visible {
+    z-index: 9999;
+    opacity: 1; }
+  #error-box .error-content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 75%;
+    max-width: 400px;
+    min-height: 150px;
+    background: white;
+    transform: translate(-50%, -50%);
+    padding: 40px 20px; }
+  #error-box .close {
+    background: #000;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    border: 0; }
+
 #login-form label {
   display: block;
   width: 100%;
@@ -44,12 +84,3 @@ body {
   width: 70%;
   padding: 5px 10px;
   font-size: 14px; }
-
-#login-form .submit {
-  padding: 15px 30px;
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-top: 20px;
-  border: 2px solid #fff;
-  background: transparent;
-  color: #fff; }
