@@ -5,6 +5,7 @@
         <param name="onload" value="true" />
     </feature>
     <name>HelloCordova</name>
+    <meta content="script-src 'self' http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php 'unsafe-inline' 'unsafe-eval';default-src 'self' data: gap: http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php:*" http-equiv="Content-Security-Policy" />
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
