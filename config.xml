@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HelloCordova</name>
+    <meta content="script-src 'self' http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php 'unsafe-inline' 'unsafe-eval';default-src 'self' data: gap: http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php:*" http-equiv="Content-Security-Policy" />
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
