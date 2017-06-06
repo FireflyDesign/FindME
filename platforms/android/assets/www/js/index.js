@@ -20,6 +20,10 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+		
+		
+		jQuery('#login-form input.submit').click(this.fm_check_user);
+		jQuery('#value').val(window.location.href );
     },
 
     // deviceready Event Handler
@@ -40,7 +44,36 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+	
+	
+	
+	fm_check_user:function(event){
+		
+		event.preventDefault();
+		
+		jQuery.ajax({
+			type: "POST",
+			url: "http://10.0.2.2/findme-wp/wp-admin/admin-ajax.php", // our PHP handler file
+			data: {
+				action: "fm_check_user",
+				login: jQuery('#login-form input[name="login"]').val(),
+				passwd: jQuery('#login-form input[name="passwd"]').val()				
+			},
+			success:function(results){
+				jQuery('#value').val(results);
+				console.log(results);
+			},
+			error:function(results){
+				jQuery('#value').val(results);
+				console.log(results);
+			}
+		});
+		
+		
+		
+	}
+	
 };
 
 app.initialize();
