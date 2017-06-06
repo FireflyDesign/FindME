@@ -36,6 +36,7 @@
 		<script>
 			document.write('<meta http-equiv="Content-Security-Policy" content="script-src \'self\' '+ connect +'/wp-admin/admin-ajax.php \'unsafe-inline\' \'unsafe-eval\'; default-src \'self\' data: gap: '+ connect +'/wp-admin/admin-ajax.php \'unsafe-inline\' \'unsafe-eval\'; style-src \'self\' \'unsafe-inline\' ; media-src *; img-src \'self\' data: content:;">');
 		</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -46,7 +47,8 @@
         <div class="app">
             <h1>Find ME</h1>
 			
-			<form id="login-form" action="" method="GET">
+			<!-- Login form -->
+			<form id="login-form" action="" method="POST">
 			
 				<label for="login">
 					<input name="login" type="text" placeholder="login" value="">
@@ -57,9 +59,7 @@
 				
 				<input class="submit cta" type="button" value="Zaloguj się">
 				
-			</form>
-			<input id="value" type="text" name="value" value="resp">
-			
+			</form>			
 			
 			<!-- Error box -->
 			<div id="error-box" class="error-box">
@@ -67,6 +67,13 @@
 					<p></p>
 					<span class="close cta"></span>
 				</div>				
+			</div>	
+			
+			<!-- Panel -->
+			<div id="user-panel" class="panel user-panel">	
+				<div class="user-panel-content">
+					
+				</div>	
 			</div>
 			
         </div>

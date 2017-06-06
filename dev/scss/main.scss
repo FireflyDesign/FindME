@@ -19,7 +19,7 @@ body{
 		top: 0;
 		left: 0;
 		width: 96%;
-		height: calc(100%-100px);
+		height: calc(100% - 100px);
 		padding: 50px 2%;
 		max-height: 100vh;
 		
@@ -42,3 +42,4 @@ body{
 @import 'elements/_cta';
 @import 'elements/_error_box';
 @import 'elements/_login_form';
+@import 'elements/_user_panel';
